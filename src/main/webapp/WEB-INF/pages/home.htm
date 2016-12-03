@@ -1,0 +1,112 @@
+<div id="content">
+  <h2 class="header">All Animals</h2>
+  
+  <select id="optionsList" name="optionsListId">
+  <option  th:value="select" 
+                    th:text="Select-animal-type">Options</option>
+                    
+            <option th:each="animal : ${animals}" th:value="${animal.animalType}" 
+                    th:text="${animal.animalType}">Options</option>
+                    <option  th:value="all" 
+                    th:text="all">Options</option>
+                    
+        </select>
+       
+        <div id="results"></div>
+		
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+    
+      $("#optionsList").on("change", function(){
+        var selected = $(this).val();
+        
+    	
+        $("#results").html("You selected: " + selected);
+       if (selected=="DOG") {
+    	   $('.animal-list').hide(); 
+    	   $('.catlist').hide(); 
+    	   $('.snakelist').hide();
+    	   $('.rabbitlist').hide();
+    	   
+    	   $('.doglist').show(); 
+    	   
+    	   
+    	   
+       }
+       else if (selected=="CAT") {
+    	   $('.animal-list').hide(); 
+    	   $('.doglist').hide(); 
+    	   $('.snakelist').hide();
+    	   $('.rabbitlist').hide();  
+    	   $('.catlist').show(); 
+    	   
+       }
+       else  if (selected=="SNAKE") {
+    	   $('.animal-list').hide(); 
+    	   $('.doglist').hide(); 
+    	   
+    	   $('.rabbitlist').hide();  
+    	   $('.catlist').hide();
+    	   $('.snakelist').show(); 
+    	   
+       }
+       else  if (selected=="RABBIT") {
+    	   $('.animal-list').hide(); 
+    	   $('.doglist').hide(); 
+    	   $('.snakelist').hide();
+    	  
+    	   $('.catlist').hide(); 
+    	   $('.rabbitlist').show(); 
+    	   
+       }
+       else  if (selected=="all") {
+    	   $('.animal-list').show(); 
+    	   $('.doglist').hide(); 
+    	   $('.snakelist').hide();
+    	   $('.rabbitlist').hide();  
+    	   $('.catlist').hide(); 
+    	         
+       }
+      });
+     
+    </script>
+   <div class="animal-list">
+    <div class="animal" th:each="animal : ${animals}">
+      <span class="name" th:text="${animal.name}">Name</span>
+      <span class="type" th:text="${animal.animalType}">Animal Type</span>
+      
+    </div>
+  </div> 
+  
+  <div class="doglist" style="display:none;">
+    <div class="dog" th:each="dog : ${dogs}">
+      <span class="name" th:text="${dog.name}">Name</span>
+      <span class="type" th:text="${dog.animalType}">Animal Type</span>
+      
+    </div>
+  </div>
+  
+  <div class="catlist" style="display:none;">
+    <div class="cat" th:each="cat : ${cats}">
+      <span class="name" th:text="${cat.name}">Name</span>
+      <span class="type" th:text="${cat.animalType}">Animal Type</span>
+      
+    </div>
+  </div>
+  
+  <div class="snakelist" style="display:none;">
+    <div class="snake" th:each="snake : ${snakes}">
+      <span class="name" th:text="${snake.name}">Name</span>
+      <span class="type" th:text="${snake.animalType}">Animal Type</span>
+      
+    </div>
+  </div>
+  
+  <div class="rabbitlist" style="display:none;">
+    <div class="rabbit" th:each="rabbit : ${rabbits}">
+      <span class="name" th:text="${rabbit.name}">Name</span>
+      <span class="type" th:text="${rabbit.animalType}">Animal Type</span>
+      
+    </div>
+  </div>
+</div>

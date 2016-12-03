@@ -1,0 +1,73 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+#content, #header, #footer {
+  width: 600px;
+}
+.red {
+    color: red;
+  }
+.menu {
+  display: flex;
+}
+
+.menu > a {
+  border-bottom: 1px solid grey;
+  border-right: 1px solid grey;
+  text-align: center;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.menu > a.selected {
+  background-color: lightgray;
+}
+
+.menu > a:last-child {
+  border-right: 0;
+}
+
+.menu > a:focus, .menu > a:hover {
+  background-color: #e5e5e5;
+}
+
+h2.header {
+  padding-bottom: 0;
+  margin-bottom: 15px;
+  border-bottom: 1px solid grey;
+}
+
+
+.animal-list,.doglist,.snakelist,.rabbitlist,.catlist {
+  width: 400px;
+}
+
+
+.animal,.dog,.cat,.snake,.rabbit {
+  border-bottom: 1px solid grey;
+  padding: 4px 5px;
+}
+
+
+.name {
+  font-size: 1rem;
+}
+
+.characteristic {
+  text-align: right;
+}
+
+.type {
+  font-size: 0.8rem;
+  float: right;
+}
+
+.rating-table, .rating-table th, .rating-table td, .stats-table, .stats-table th, .stats-table td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  width: 4.0rem;
+  padding: 4px;
+}

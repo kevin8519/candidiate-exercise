@@ -1,0 +1,132 @@
+<div id="content">
+  <h2 class="header">Rate</h2>
+  <div class="animal-list">
+  <table>
+    <tr>
+    <th>Name</th>
+    <th>Animal Type</th>
+    <th>Offense</th>
+    <th>Defence</th>
+    <th>Items</th>
+    <th>Health</th>
+    <th>Rating</th>
+    </tr>
+    
+    <div class="animal1" th:each="animal : ${lifes}">
+    
+    <tr>
+    <td>
+     <span class="name" th:text="${animal.name}">Name</span>
+     </td>
+     <td>
+      <span class="type" th:text="${animal.animalType}">Animal Type</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.offense}">Offence</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.defense}">Defence</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.health}">Health</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.items}">items</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.rate}">items</span>
+      </td>
+       </tr> 
+     </div>
+   
+   
+      </table> 
+    </div>
+    <div>
+    <p> Minimin Rating: </p>
+    <table>
+    <tr>
+    <th>Name</th>
+    <th>Animal Type</th>
+    <th>Offense</th>
+    <th>Defence</th>
+    <th>Items</th>
+    <th>Health</th>
+    <th>Rating</th>
+    </tr>
+    
+    <div class="animal1" th:each="animal : ${lifemin}">
+    
+    <tr>
+    <td>
+     <span class="name" th:text="${animal.name}">Name</span>
+     </td>
+     <td>
+      <span class="type" th:text="${animal.animalType}">Animal Type</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.offense}">Offence</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.defense}">Defence</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.health}">Health</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.items}">items</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.rate}">items</span>
+      </td>
+       </tr> 
+     </div>
+   
+   
+      </table> 
+    </div>
+    <div>
+    <p> Maximum Rating: </p>
+    <table>
+    <tr>
+    <th>Name</th>
+    <th>Animal Type</th>
+    <th>Offense</th>
+    <th>Defence</th>
+    <th>Items</th>
+    <th>Health</th>
+    <th>Rating</th>
+    </tr>
+    
+    <div class="animal1" th:each="animal : ${lifemax}">
+    
+    <tr>
+    <td>
+     <span class="name" th:text="${animal.name}">Name</span>
+     </td>
+     <td>
+      <span class="type" th:text="${animal.animalType}">Animal Type</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.offense}">Offence</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.defense}">Defence</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.health}">Health</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.items}">items</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.rate}">items</span>
+      </td>
+       </tr> 
+     </div>
+   
+   
+      </table> 
+    </div>
+    <p> Avg Rating:  29.6</p>
+  </div> 

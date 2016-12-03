@@ -1,0 +1,13 @@
+/home/kevin/Downloads/candidate-exercise/src/main/java/com/newconstructs/configuration/ThymeleafLayoutInterceptor.java
+/home/kevin/Downloads/candidate-exercise/src/main/java/com/newconstructs/domain/api/Layout.java
+/home/kevin/Downloads/candidate-exercise/src/main/java/com/newconstructs/controller/home/HomeController.java
+/home/kevin/Downloads/candidate-exercise/src/main/java/com/newconstructs/service/api/AnimalService.java
+/home/kevin/Downloads/candidate-exercise/src/main/java/com/newconstructs/exception/NCUnsupportedOperationException.java
+/home/kevin/Downloads/candidate-exercise/src/main/java/com/newconstructs/exception/NCRuntimeException.java
+/home/kevin/Downloads/candidate-exercise/src/main/java/com/newconstructs/service/AnimalServiceImpl.java
+/home/kevin/Downloads/candidate-exercise/src/main/java/com/newconstructs/exception/NCWebException.java
+/home/kevin/Downloads/candidate-exercise/src/main/java/com/newconstructs/exception/NCPersistenceException.java
+/home/kevin/Downloads/candidate-exercise/src/main/java/com/newconstructs/domain/Animal.java
+/home/kevin/Downloads/candidate-exercise/src/main/java/com/newconstructs/configuration/Application.java
+/home/kevin/Downloads/candidate-exercise/src/main/java/com/newconstructs/exception/NCException.java
+/home/kevin/Downloads/candidate-exercise/src/main/java/com/newconstructs/configuration/WebMvcConfig.java
