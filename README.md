@@ -55,3 +55,4 @@ Sum the results of applying the previous logic for each animal. The highest rate
 1. A brief description of your approach to the task, including any assumptions you made or known issues with your code.
 2. Zipped candidate-exercise containing your work. If your zip file is too large, you can delete the contents of candidate-exercise/target before zipping to reduce the size.
 3. Copy of versioning log if applicable
+# candidiate-exercise
