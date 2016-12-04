@@ -24,8 +24,21 @@ public interface AnimalService {
   public List<Animal> mimimumRating();
   public List<Animal> maxRating();
   
+  public List<Animal> dogMimimumRating();
+  public List<Animal>dogMaxRating();
   
+  public List<Animal> catMimimumRating();
+  public List<Animal>catMaxRating();
+  public List<Animal> rabMimimumRating();
+  public List<Animal>rabMaxRating();
+  public List<Animal> snakMimimumRating();
+  public List<Animal>snakMaxRating();
+  public double averageRating();
   
+  public double averageDogRating();
+  public double averageCatRating();
+  public double averageSnakeRating();
+  public double averageRabbitRating();
   
 }
 

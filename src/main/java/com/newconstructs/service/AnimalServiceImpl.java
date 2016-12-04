@@ -109,6 +109,201 @@ public List<Animal> maxRating() {
 }
 
 
+@Override
+public List<Animal> dogMimimumRating() {
+	List<Animal> resultdogmin = new ArrayList<Animal>();
+	for (Animal anidog : ANIMALS) {
+		  if (anidog.getAnimalType() == AnimalType.DOG) {
+		    resultdogmin.add(anidog);
+		  }
+		}
+	// TODO Auto-generated method stub
+	 return resultdogmin.subList(resultdogmin.size()-1, resultdogmin.size());
+}
+
+
+@Override
+public List<Animal> dogMaxRating() {
+	List<Animal> resultdogmax = new ArrayList<Animal>();
+	for (Animal anidog : ANIMALS) {
+		  if (anidog.getAnimalType() == AnimalType.DOG) {
+		    resultdogmax.add(anidog);
+		  }
+		}
+	// TODO Auto-generated method stub
+	 return resultdogmax.subList(0,1);
+}
+
+
+@Override
+public List<Animal> catMimimumRating() {
+	List<Animal> resultcatmin = new ArrayList<Animal>();
+	for (Animal anidog : ANIMALS) {
+		  if (anidog.getAnimalType() == AnimalType.CAT) {
+		    resultcatmin.add(anidog);
+		  }
+		}
+	// TODO Auto-generated method stub
+	 return resultcatmin.subList(resultcatmin.size()-1, resultcatmin.size());
+	 
+}
+
+
+@Override
+public List<Animal> catMaxRating() {
+	// TODO Auto-generated method stub
+	List<Animal> resultcatmax = new ArrayList<Animal>();
+	for (Animal anidog : ANIMALS) {
+		  if (anidog.getAnimalType() == AnimalType.CAT) {
+		    resultcatmax.add(anidog);
+		  }
+		}
+	// TODO Auto-generated method stub
+	 return resultcatmax.subList(0,1);
+
+}
+
+
+@Override
+public List<Animal> rabMimimumRating() {
+	// TODO Auto-generated method stub
+	List<Animal> resultrabmin = new ArrayList<Animal>();
+	for (Animal anidog : ANIMALS) {
+		  if (anidog.getAnimalType() == AnimalType.RABBIT) {
+		    resultrabmin.add(anidog);
+		  }
+		}
+	// TODO Auto-generated method stub
+	 return resultrabmin.subList(resultrabmin.size()-1, resultrabmin.size());
+	 
+}
+
+@Override
+public List<Animal> rabMaxRating() {
+	// TODO Auto-generated method stub
+	List<Animal> resultrabmax = new ArrayList<Animal>();
+	for (Animal anidog : ANIMALS) {
+		  if (anidog.getAnimalType() == AnimalType.RABBIT) {
+		    resultrabmax.add(anidog);
+		  }
+		}
+	// TODO Auto-generated method stub
+	 return resultrabmax.subList(0,1);
+}
+
+
+@Override
+public List<Animal> snakMimimumRating() {
+	// TODO Auto-generated method stub
+	List<Animal> resultsnkmin = new ArrayList<Animal>();
+	for (Animal anidog : ANIMALS) {
+		  if (anidog.getAnimalType() == AnimalType.SNAKE) {
+		    resultsnkmin.add(anidog);
+		  }
+		}
+	// TODO Auto-generated method stub
+	 return resultsnkmin.subList(resultsnkmin.size()-1, resultsnkmin.size());
+	 
+}
+
+
+@Override
+public List<Animal> snakMaxRating() {
+	// TODO Auto-generated method stub
+	List<Animal> resultsnkmax = new ArrayList<Animal>();
+	for (Animal anidog : ANIMALS) {
+		  if (anidog.getAnimalType() == AnimalType.SNAKE) {
+		    resultsnkmax.add(anidog);
+		  }
+		}
+	// TODO Auto-generated method stub
+	 return resultsnkmax.subList(0,1);
+}
+
+
+@Override
+public double averageRating() {
+	// TODO Auto-generated method stub
+	int sum = 0;
+	int count=0;
+	List<Animal> averagevar = new ArrayList<Animal>();
+	
+	for (Animal anidog : ANIMALS){
+		
+		sum=sum+anidog.getRate();
+		
+		count++;
+		
+		
+	}
+	return Math.round(sum/count);
+}
+
+
+@Override
+public double averageDogRating() {
+	// TODO Auto-generated method stub
+	double sum=0;
+	int count=0;
+	List<Animal> resultdog = new ArrayList<Animal>();
+	for (Animal anidog : ANIMALS) {
+	  if (anidog.getAnimalType() == AnimalType.DOG) {
+	    sum=sum+anidog.getRate();
+	    count++;
+	  }
+	}
+	return Math.round(sum/count);
+}
+
+
+@Override
+public double averageCatRating() {
+	// TODO Auto-generated method stub
+	double sum=0;
+	int count=0;
+	List<Animal> resultdog = new ArrayList<Animal>();
+	for (Animal anidog : ANIMALS) {
+	  if (anidog.getAnimalType() == AnimalType.CAT) {
+	    sum=sum+anidog.getRate();
+	    count++;
+	  }
+	}
+	return Math.round(sum/count);
+}
+
+
+@Override
+public double averageSnakeRating() {
+	// TODO Auto-generated method stub
+	double sum=0;
+	int count=0;
+	List<Animal> resultdog = new ArrayList<Animal>();
+	for (Animal anidog : ANIMALS) {
+	  if (anidog.getAnimalType() == AnimalType.SNAKE) {
+	    sum=sum+anidog.getRate();
+	    count++;
+	  }
+	}
+	return Math.round(sum/count);
+}
+
+
+@Override
+public double averageRabbitRating() {
+	// TODO Auto-generated method stub
+	double sum=0;
+	int count=0;
+	List<Animal> resultdog = new ArrayList<Animal>();
+	for (Animal anidog : ANIMALS) {
+	  if (anidog.getAnimalType() == AnimalType.RABBIT) {
+	    sum=sum+anidog.getRate();
+	    count++;
+	  }
+	}
+	return Math.round(sum/count);
+}
+
+
 }
 
 

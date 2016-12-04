@@ -1,5 +1,475 @@
 <div id="content">
   <h2 class="header">Rate</h2>
+   <select id="optionsList" name="optionsListId">
+  <option  th:value="select" 
+                    th:text="Select-animal-type">Options</option>
+                    
+            <option th:each="animal : ${lifes}" th:value="${animal.animalType}" 
+                    th:text="${animal.animalType}">Options</option>
+                    <option  th:value="all" 
+                    th:text="all">Options</option>
+                    
+        </select>
+       
+        <div id="results"></div>
+		
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+    
+      $("#optionsList").on("change", function(){
+        var selected = $(this).val();
+        
+    	
+        $("#results").html("You selected: " + selected);
+       if (selected=="DOG") {
+    	   $('.animal-list').hide(); 
+    	   $('.catlist').hide(); 
+    	   $('.snakelist').hide();
+    	   $('.rabbitlist').hide();
+    	   
+    	   $('.doglist').show(); 
+    	   
+    	   
+    	   
+       }
+       else if (selected=="CAT") {
+    	   $('.animal-list').hide(); 
+    	   $('.doglist').hide(); 
+    	   $('.snakelist').hide();
+    	   $('.rabbitlist').hide();  
+    	   $('.catlist').show(); 
+    	   
+       }
+       else  if (selected=="SNAKE") {
+    	   $('.animal-list').hide(); 
+    	   $('.doglist').hide(); 
+    	   
+    	   $('.rabbitlist').hide();  
+    	   $('.catlist').hide();
+    	   $('.snakelist').show(); 
+    	   
+       }
+       else  if (selected=="RABBIT") {
+    	   $('.animal-list').hide(); 
+    	   $('.doglist').hide(); 
+    	   $('.snakelist').hide();
+    	  
+    	   $('.catlist').hide(); 
+    	   $('.rabbitlist').show(); 
+    	   
+       }
+       else  if (selected=="all") {
+    	   $('.animal-list').show(); 
+    	   $('.doglist').hide(); 
+    	   $('.snakelist').hide();
+    	   $('.rabbitlist').hide();  
+    	   $('.catlist').hide(); 
+    	         
+       }
+      });
+     
+    </script>
+  <!--  <div class="animal-list">
+    <div class="animal" th:each="animal : ${animals}">
+      <span class="name" th:text="${animal.name}">Name</span>
+      <span class="type" th:text="${animal.animalType}">Animal Type</span>
+      
+    </div>
+  </div>  -->
+  
+  <div class="doglist " style="display:none;">
+  <table>
+    <tr>
+    <th>Name</th>
+    <th>Animal Type</th>
+    <th>Offense</th>
+    <th>Defence</th>
+    <th>Items</th>
+    <th>Health</th>
+    <th>Rating</th>
+    </tr>
+    
+    <div class="#" th:each="animal : ${dogs}">
+    
+    <tr>
+    <td>
+     <span class="name" th:text="${animal.name}">Name</span>
+     </td>
+     <td>
+      <span class="type" th:text="${animal.animalType}">Animal Type</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.offense}">Offence</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.defense}">Defence</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.health}">Health</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.items}">items</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.rate}">items</span>
+      </td>
+       </tr> 
+     </div>
+    </table> 
+    <table>
+   <th:block class="animal stats-table" th:each="animal : ${dogmin}">
+   
+   
+     <tr> 
+  <p>Minimum Rating:</p>
+ 
+      <th> Name:</th>
+       <th> Rating:</th>
+       
+     </tr>
+    <tr>
+    <td>
+     <span class="name" th:text="${animal.name}">Name</span>
+     </td>
+    
+      <td>
+      <span class="type" th:text="${animal.rate}">items</span>
+      </td>
+      
+       </tr> 
+      </th:block>
+      </table>
+      <table>
+    
+   
+   <div class="animal " th:each="animal : ${dogmax}">
+    
+    <tr> 
+  <p>Maximum Rating:</p>
+ 
+      <th> Name:</th>
+       <th> Rating:</th>
+     </tr>
+    <tr>
+    <td>
+     <span class="name" th:text="${animal.name}">Name</span>
+     </td>
+     
+      <td>
+      <span class="type" th:text="${animal.rate}">items</span>
+      </td>
+       </tr> 
+     </div>
+      
+    </table>
+    <table>
+    <tr>
+    <td> Average Rating:</td>
+    <td>
+    <p class="type" th:text="${dogavg}"> </p> 
+    </td>
+    </tr>
+    </table>
+  </div>
+  
+  <div class="catlist  " style="display:none;">
+  <table>
+    <tr>
+    <th>Name</th>
+    <th>Animal Type</th>
+    <th>Offense</th>
+    <th>Defense</th>
+    <th>Items</th>
+    <th>Health</th>
+    <th>Rating</th>
+    </tr>
+    
+    <div class="animal1" th:each="animal : ${cats}">
+    
+    <tr>
+    <td>
+     <span class="name" th:text="${animal.name}">Name</span>
+     </td>
+     <td>
+      <span class="type" th:text="${animal.animalType}">Animal Type</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.offense}">Offence</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.defense}">Defence</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.health}">Health</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.items}">items</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.rate}">items</span>
+      </td>
+       </tr> 
+     </div>
+   
+   
+      </table> 
+      
+     <table>
+   <th:block class="animal stats-table" th:each="animal : ${catmin}">
+   
+   
+     <tr> 
+  <p>Minimum Rating:</p>
+ 
+      <th> Name:</th>
+       <th> Rating:</th>
+     </tr>
+    <tr>
+    <td>
+     <span class="name" th:text="${animal.name}">Name</span>
+     </td>
+    
+      <td>
+      <span class="type" th:text="${animal.rate}">items</span>
+      </td>
+       </tr> 
+      </th:block>
+      </table>
+      <table>
+    
+   
+   <div class="animal" th:each="animal : ${catmax}">
+    
+    <tr> 
+  <p>Maximum Rating:</p>
+ 
+      <th> Name:</th>
+       <th> Rating:</th>
+     </tr>
+    <tr>
+    <td>
+     <span class="name" th:text="${animal.name}">Name</span>
+     </td>
+     
+      <td>
+      <span class="type" th:text="${animal.rate}">items</span>
+      </td>
+       </tr> 
+     </div>
+      
+    </table>
+    <table>
+    <tr>
+    <td> Average Rating:</td>
+    <td>
+    <p class="type" th:text="${catavg}"> </p> 
+    </td>
+    </tr>
+    </table>
+ 
+  </div>
+  
+  <div class="snakelist " style="display:none;">
+  <table>
+    <tr>
+    <th>Name</th>
+    <th>Animal Type</th>
+    <th>Offense</th>
+    <th>Defence</th>
+    <th>Items</th>
+    <th>Health</th>
+    <th>Rating</th>
+    </tr>
+    
+    <div class="animal1" th:each="animal : ${snakes}">
+    
+    <tr>
+    <td>
+     <span class="name" th:text="${animal.name}">Name</span>
+     </td>
+     <td>
+      <span class="type" th:text="${animal.animalType}">Animal Type</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.offense}">Offence</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.defense}">Defence</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.health}">Health</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.items}">items</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.rate}">items</span>
+      </td>
+       </tr> 
+     </div>
+   
+   
+      </table> 
+    <!-- <div class="snake" th:each="snake : ${snakes}">
+      <span class="name" th:text="${snake.name}">Name</span>
+      <span class="type" th:text="${snake.animalType}">Animal Type</span>
+      
+    </div> -->
+     <table>
+   <th:block class="animal stats-table" th:each="animal : ${snakemin}">
+   
+   
+     <tr> 
+  <p>Minimum Rating:</p>
+ 
+      <th> Name:</th>
+       <th> Rating:</th>
+     </tr>
+    <tr>
+    <td>
+     <span class="name" th:text="${animal.name}">Name</span>
+     </td>
+    
+      <td>
+      <span class="type" th:text="${animal.rate}">items</span>
+      </td>
+       </tr> 
+      </th:block>
+      </table>
+      <table>
+    
+   
+   <div class="animal" th:each="animal : ${snakemax}">
+    
+    <tr> 
+  <p>Maximum Rating:</p>
+ 
+      <th> Name:</th>
+       <th> Rating:</th>
+     </tr>
+    <tr>
+    <td>
+     <span class="name" th:text="${animal.name}">Name</span>
+     </td>
+     
+      <td>
+      <span class="type" th:text="${animal.rate}">items</span>
+      </td>
+       </tr> 
+     </div>
+      
+    </table>
+    <table>
+    <tr>
+    <td> Average Rating:</td>
+    <td>
+    <p class="type" th:text="${snakeavg}"> </p> 
+    </td>
+    </tr>
+    </table>
+ 
+  </div>
+  
+  <div class="rabbitlist  " style="display:none;">
+  <table>
+    <tr>
+    <th>Name</th>
+    <th>Animal Type</th>
+    <th>Offense</th>
+    <th>Defence</th>
+    <th>Items</th>
+    <th>Health</th>
+    <th>Rating</th>
+    </tr>
+    
+    <div class="animal1" th:each="animal : ${rabbits}">
+    
+    <tr>
+    <td>
+     <span class="name" th:text="${animal.name}">Name</span>
+     </td>
+     <td>
+      <span class="type" th:text="${animal.animalType}">Animal Type</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.offense}">Offence</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.defense}">Defence</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.health}">Health</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.items}">items</span>
+      </td>
+      <td>
+      <span class="type" th:text="${animal.rate}">items</span>
+      </td>
+       </tr> 
+     </div>
+   
+   
+      </table> 
+   <!--  <div class="rabbit" th:each="rabbit : ${rabbits}">
+      <span class="name" th:text="${rabbit.name}">Name</span>
+      <span class="type" th:text="${rabbit.animalType}">Animal Type</span>
+      
+    </div> -->
+     <table>
+   <th:block class="animal stats-table" th:each="animal : ${rabbitmin}">
+   
+   
+     <tr> 
+  <p>Minimum Rating:</p>
+ 
+      <th> Name:</th>
+       <th> Rating:</th>
+     </tr>
+    <tr>
+    <td>
+     <span class="name" th:text="${animal.name}">Name</span>
+     </td>
+    
+      <td>
+      <span class="type" th:text="${animal.rate}">items</span>
+      </td>
+       </tr> 
+      </th:block>
+      </table>
+      <table>
+    
+   
+   <div class="animal" th:each="animal : ${rabbitmax}">
+    
+    <tr> 
+  <p>Maximum Rating:</p>
+ 
+      <th> Name:</th>
+       <th> Rating:</th>
+     </tr>
+    <tr>
+    <td>
+     <span class="name" th:text="${animal.name}">Name</span>
+     </td>
+     
+      <td>
+      <span class="type" th:text="${animal.rate}">items</span>
+      </td>
+       </tr> 
+     </div>
+      
+    </table>
+    <table>
+    <tr>
+    <td> Average Rating:</td>
+    <td>
+    <p class="type" th:text="${rabbitavg}"> </p> 
+    </td>
+    </tr>
+    </table>
+ 
+  </div>
   <div class="animal-list">
   <table>
     <tr>
@@ -12,7 +482,7 @@
     <th>Rating</th>
     </tr>
     
-    <div class="animal1" th:each="animal : ${lifes}">
+    <div class="#" th:each="animal : ${lifes}">
     
     <tr>
     <td>
@@ -42,8 +512,9 @@
    
       </table> 
     </div>
+    <br/>
     <div>
-    <p> Minimin Rating: </p>
+    <p> Minimin Rating as per whole animals: </p>
     <table>
     <tr>
     <th>Name</th>
@@ -55,7 +526,7 @@
     <th>Rating</th>
     </tr>
     
-    <div class="animal1" th:each="animal : ${lifemin}">
+    <div class="animal" th:each="animal : ${lifemin}">
     
     <tr>
     <td>
@@ -85,8 +556,9 @@
    
       </table> 
     </div>
+    <br/>
     <div>
-    <p> Maximum Rating: </p>
+    <p> Maximum Rating as per whole animals: </p>
     <table>
     <tr>
     <th>Name</th>
@@ -98,7 +570,7 @@
     <th>Rating</th>
     </tr>
     
-    <div class="animal1" th:each="animal : ${lifemax}">
+    <div class="animal" th:each="animal : ${lifemax}">
     
     <tr>
     <td>
@@ -128,5 +600,12 @@
    
       </table> 
     </div>
-    <p> Avg Rating:  29.6</p>
+    <table>
+    <tr>
+    <td> Average Rating:</td>
+    <td>
+    <p class="type" th:text="${avg}"> </p> 
+    </td>
+    </tr>
+    </table>
   </div> 
